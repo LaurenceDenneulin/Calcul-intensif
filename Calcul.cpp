@@ -42,6 +42,11 @@ void Calcul::Set_Elasticity()
     return ;
 }
 
+double Calcul::Wtilde(double g, double e)
+{
+    return std::pow((((1+e)*g)/(std::pow(1-tC,1+e)-std::pow(1-tP,1+e))),1/(1+e));
+}
+
 Calcul::~Calcul()
 {
     //dtor

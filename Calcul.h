@@ -17,11 +17,14 @@ class Calcul
         virtual ~Calcul();
         void Set_Productivity_Gamma();
         void Set_Elasticity();
+        double Wtilde(double g, double e);
         double r;
     protected:
     private:
         double taxmax;
         double S [2][2];
+        double tP=0.75;
+        double tC=0.65;
         std::vector<double> productivity;
         std::vector<double> gamma;
         std::vector<double> elasticity;
