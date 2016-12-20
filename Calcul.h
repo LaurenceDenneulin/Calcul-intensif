@@ -13,7 +13,8 @@ class Calcul
     public:
         Calcul();
         virtual ~Calcul();
-        void LogMultinormalDefinition();
+        void Set_Productivity_Gamma();
+        void Set_Elasticity();
         double r;
     protected:
     private:
@@ -21,6 +22,7 @@ class Calcul
         double S [2][2];
         double productivity[Kmax];
         double gamma[Kmax];
+        double elasticity[Kmax];
 
 };
 

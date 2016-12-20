@@ -9,6 +9,6 @@ int main()
   Calcul C;
   C.r=0.01*(rand()%100);
 
-  C.LogMultinormalDefinition();
+  C.Set_Productivity_Gamma();
     std::cout<<C.r<<std::endl;
 }

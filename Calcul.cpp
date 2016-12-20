@@ -10,7 +10,7 @@ Calcul::Calcul()
     taxmax=0;
 }
 
-void Calcul::LogMultinormalDefinition()
+void Calcul::Set_Productivity_Gamma()
 {
     std::mt19937 gen;
     gen.seed(1234);
