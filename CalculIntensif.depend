@@ -2,9 +2,14 @@
 1482222633 source:c:\users\laurence\documents\calcul intensif\calcul.cpp
 	"Calcul.h"
 
-1482223325 c:\users\laurence\documents\calcul intensif\calcul.h
+1482226157 c:\users\laurence\documents\calcul intensif\calcul.h
 	<iostream>
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
+	<random.h>
+	<cmath>
+
+1482223546 source:c:\users\laurence\documents\calcul intensif\main.cpp
+	"Calcul.h"
 

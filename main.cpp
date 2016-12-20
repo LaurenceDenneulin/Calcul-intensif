@@ -5,9 +5,6 @@ int main()
     // Déclaration des constante
 
     // Il faudra faire en parallèle :
-
-    int taxmax(0);
-
     // le SeedRandim[1234]
     //printf ("First number: %d\n", rand()%100);
     srand (time(NULL));
