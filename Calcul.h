@@ -1,5 +1,7 @@
 #ifndef CALCUL_H
 #define CALCUL_H
+#include <iostream>
+#include <vector>
 
 
 const int Kmax = 1000;
@@ -20,9 +22,9 @@ class Calcul
     private:
         double taxmax;
         double S [2][2];
-        double productivity[Kmax];
-        double gamma[Kmax];
-        double elasticity[Kmax];
+        std::vector<double> productivity;
+        std::vector<double> gamma;
+        std::vector<double> elasticity;
 
 };
 

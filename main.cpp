@@ -11,4 +11,5 @@ int main()
 
   C.Set_Productivity_Gamma();
     std::cout<<C.r<<std::endl;
+    C.Set_Elasticity();
 }

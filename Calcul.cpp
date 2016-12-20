@@ -1,9 +1,9 @@
 #include "Calcul.h"
-#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <cmath>
 #include <random>
+#include <algorithm>
 
 Calcul::Calcul()
 {
@@ -22,10 +22,23 @@ void Calcul::Set_Productivity_Gamma()
  {
     double Y1 = nd(gen);
     double Y2 = nd(gen);
-    productivity[i]=exp(m1+s1*Y1);
-    gamma[i]=exp(m2+s2*(r*Y1+sqrt(1.0-r*r*Y2)));
+    productivity.push_back(exp(m1+s1*Y1));
+    gamma.push_back(exp(m2+s2*(r*Y1+sqrt(1.0-r*r*Y2))));
     std::cout<<productivity[i]<<" "<<gamma[i]<<std::endl;
   }
+    return ;
+}
+
+void Calcul::Set_Elasticity()
+{
+    auto result=std::minmax_element(productivity.begin(), productivity.end());
+    double wagemin=productivity[result.first-productivity.begin()];
+    double wagemax=productivity[result.second-productivity.begin()];
+    std::cout<<wagemin<<" "<<wagemax<<std::endl;
+    for (int i=0;i<Kmax;i++)
+    {
+        elasticity.push_back((0.4/(wagemax-wagemin))*(productivity[i]-wagemin)+0.1);
+    }
     return ;
 }
 
