@@ -47,6 +47,16 @@ double Calcul::Wtilde(double g, double e)
     return std::pow((((1+e)*g)/(std::pow(1-tC,1+e)-std::pow(1-tP,1+e))),1/(1+e));
 }
 
+void Calcul::Set_Threshold()
+{
+    for (int i=0;i<Kmax;i++)
+    {
+        threshold.push_back(Wtilde(gamma[i],elasticity[i]));
+        std::cout<<threshold[i]<<std::endl;
+    }
+    return ;
+}
+
 Calcul::~Calcul()
 {
     //dtor

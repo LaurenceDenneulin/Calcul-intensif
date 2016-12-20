@@ -18,6 +18,7 @@ class Calcul
         void Set_Productivity_Gamma();
         void Set_Elasticity();
         double Wtilde(double g, double e);
+        void Set_Threshold();
         double r;
     protected:
     private:
@@ -28,6 +29,7 @@ class Calcul
         std::vector<double> productivity;
         std::vector<double> gamma;
         std::vector<double> elasticity;
+        std::vector<double> threshold;
 
 };
 
