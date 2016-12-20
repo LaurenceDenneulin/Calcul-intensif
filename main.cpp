@@ -1,27 +1,17 @@
 #include"Calcul.h"
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <random>
 
 int main()
 {
-    // Déclaration des constante
 
-    // Il faudra faire en parallèle :
-    // le SeedRandim[1234]
-    //printf ("First number: %d\n", rand()%100);
-    srand (time(NULL));
-    //printf ("Random number: %d\n", rand()%100);
-    srand (1234);
-    int r=rand() ;
-    //printf ("Again the first number: %d\n", rand()%100);
-    std::cout <<" r vaut :"<< r << std::endl;
-
-    double S [2][2];
-    S[0][0]=s1*s1;
-    S[0][1]=r*s1*s2;
-    S[1][0]=r*s1*s2;
-    S[1][1]=s2*s2;
-
-    std::cout << " S vaut :" << S<< std::endl;
-
-
-
+    std::mt19937 gen(1234);
+    std::cout<<gen()<<std::endl;
+    std::normal_distribution<double> nd(0.0,1.0);
+    std::cout<<gen()<<std::endl;
+    double resultat = 0.001*nd(gen);
+    std::cout<<"Le résultat est : "<<resultat<< std::endl;
+    return 0;
 }

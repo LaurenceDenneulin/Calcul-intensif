@@ -1,5 +1,8 @@
 #include "Calcul.h"
-
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <cmath>
 
 
 Calcul::Calcul()
@@ -9,7 +12,6 @@ Calcul::Calcul()
 
 void Calcul::LogMultinormalDefinition(const double mu[2],const double Sigma[2][2])
 {
-
 
 }
 

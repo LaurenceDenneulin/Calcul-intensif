@@ -1,11 +1,6 @@
 #ifndef CALCUL_H
 #define CALCUL_H
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <random.h>
-#include <cmath>
+
 
 const int Kmax = 1000;
 const double m1 = 10.19357;
@@ -18,12 +13,14 @@ class Calcul
     public:
         Calcul();
         virtual ~Calcul();
-        void LogMultinormalDefinition(const double mu[2],const double Sigma[2][2]);
+        void LogMultinormalDefinition(const double mu[2], const double Sigma[2][2]);
     protected:
     private:
     double taxmax;
     double S [2][2];
     double distribution[2][2];
+    double productivity[Kmax];
+    double gamma[Kmax];
 
 };
 
