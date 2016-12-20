@@ -13,14 +13,14 @@ class Calcul
     public:
         Calcul();
         virtual ~Calcul();
-        void LogMultinormalDefinition(const double mu[2], const double Sigma[2][2]);
+        void LogMultinormalDefinition();
+        double r;
     protected:
     private:
-    double taxmax;
-    double S [2][2];
-    double distribution[2][2];
-    double productivity[Kmax];
-    double gamma[Kmax];
+        double taxmax;
+        double S [2][2];
+        double productivity[Kmax];
+        double gamma[Kmax];
 
 };
 
