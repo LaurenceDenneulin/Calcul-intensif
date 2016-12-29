@@ -2,10 +2,12 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+#include <omp.h>
 
 int main()
 {
     double Sifters;
+    #pragma omp for
     for (double r=-1.0;r<=1;r=r+0.1)
     {
         Calcul* c= new Calcul();
