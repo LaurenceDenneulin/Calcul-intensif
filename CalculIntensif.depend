@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1483035515 source:c:\users\laurence\documents\calcul intensif\calcul.cpp
+	"Calcul.h"
+	<stdio.h>
+	<stdlib.h>
+	<cmath>
+	<random>
+	<algorithm>
+
+1483030840 c:\users\laurence\documents\calcul intensif\calcul.h
+	<iostream>
+	<vector>
+
+1483035369 source:c:\users\laurence\documents\calcul intensif\main.cpp
+	"Calcul.h"
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<omp.h>
+

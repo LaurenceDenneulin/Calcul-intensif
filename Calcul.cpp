@@ -22,10 +22,10 @@ void Calcul::Set_Productivity_Gamma(double r)
     //On utilise ensuite la décomposition de Cholesky pour générer X et Y puis on prend l'exponentielle.
  for (int i=0; i<Kmax; i++)
  {
-    double Y1 = nd(gen);
-    double Y2 = nd(gen);
-    productivity.push_back(exp(m1+s1*Y1));
-    gamma.push_back(exp(m2+s2*(r*Y1+sqrt(1.0-r*r*Y2))));
+    double Z1 = nd(gen);
+    double Z2 = nd(gen);
+    productivity.push_back(exp(m1+s1*Z1));
+    gamma.push_back(exp(m2+s2*(r*Z1+sqrt(1.0-r*r*Z2))));
   }
     return ;
 }

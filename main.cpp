@@ -7,9 +7,11 @@
 int main()
 {
     double Sifters;
+    double r;
     #pragma omp for
-    for (double r=-1.0;r<=1;r=r+0.1)
+    for (int  i=0;i<=20;i++)
     {
+        r=(i-10)/10.f;
         Calcul* c= new Calcul();
         c->Set_Productivity_Gamma(r);
         c->Set_Elasticity();
