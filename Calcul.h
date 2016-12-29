@@ -4,7 +4,6 @@
 #include <vector>
 
 
-const int Kmax = 1000;
 const double m1 = 10.19357;
 const double s1 = 0.3022616;
 const double m2 = 11.795;
@@ -15,20 +14,29 @@ class Calcul
     public:
         Calcul();
         virtual ~Calcul();
-        void Set_Productivity_Gamma();
+        void Set_Productivity_Gamma(double r);
         void Set_Elasticity();
-        double Wtilde(double g, double e);
         void Set_Threshold();
         void Set_tax();
-        double r;
+        void Set_tPopt_tCopt();
+        void Set_ns();
+
+
+        double Wtilde(const double g, const double e);
+
+        const int Kmax = 10;
+        double tPopt;
+        double tCopt;
+        double ns;
     protected:
     private:
+        double tC;
+        double tP;
+
+        double taxmax;
         double tax;
         double gdp;
-        double taxmax;
-        double S [2][2];
-        double tP=0.75;
-        double tC=0.65;
+
         std::vector<double> productivity;
         std::vector<double> gamma;
         std::vector<double> elasticity;

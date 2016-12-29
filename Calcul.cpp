@@ -8,9 +8,11 @@
 Calcul::Calcul()
 {
     taxmax=0;
+    tPopt=0;
+    tCopt=0;
 }
 
-void Calcul::Set_Productivity_Gamma()
+void Calcul::Set_Productivity_Gamma(double r)
 {
     std::mt19937 gen;
     gen.seed(1234);
@@ -24,7 +26,6 @@ void Calcul::Set_Productivity_Gamma()
     double Y2 = nd(gen);
     productivity.push_back(exp(m1+s1*Y1));
     gamma.push_back(exp(m2+s2*(r*Y1+sqrt(1.0-r*r*Y2))));
-    std::cout<<productivity[i]<<" "<<gamma[i]<<std::endl;
   }
     return ;
 }
@@ -34,7 +35,6 @@ void Calcul::Set_Elasticity()
     auto result=std::minmax_element(productivity.begin(), productivity.end());
     double wagemin=productivity[result.first-productivity.begin()];
     double wagemax=productivity[result.second-productivity.begin()];
-    std::cout<<wagemin<<" "<<wagemax<<std::endl;
     for (int i=0;i<Kmax;i++)
     {
         elasticity.push_back((0.4/(wagemax-wagemin))*(productivity[i]-wagemin)+0.1);
@@ -42,7 +42,7 @@ void Calcul::Set_Elasticity()
     return ;
 }
 
-double Calcul::Wtilde(double g, double e)
+double Calcul::Wtilde(const double g, const double e)
 {
     return std::pow((((1+e)*g)/(std::pow(1-tC,1+e)-std::pow(1-tP,1+e))),1/(1+e));
 }
@@ -52,7 +52,6 @@ void Calcul::Set_Threshold()
     for (int i=0;i<Kmax;i++)
     {
         threshold.push_back(Wtilde(gamma[i],elasticity[i]));
-        std::cout<<threshold[i]<<std::endl;
     }
     return ;
 }
@@ -77,7 +76,41 @@ void Calcul::Set_tax()
     return;
 }
 
+void Calcul::Set_ns()
+{
+        ns=0;
+        for(int i=0;i<Kmax; i++)
+        {
+            if (productivity[i]<=threshold[i])
+            {
+                ns+=1;
+            }
+        }
+}
+
+void Calcul::Set_tPopt_tCopt()
+{
+    for (tP=0.0; tP<1.0; tP=tP+0.001)
+    {
+        for (tC=0.0; tC<tP; tC=tC+0.001)
+        {
+            Set_Threshold();
+            Set_tax();
+            if(tax>=taxmax)
+            {
+                taxmax=tax;
+                tPopt=tP;
+                tCopt=tC;
+                Set_ns();
+            }
+        }
+    }
+    return;
+}
 Calcul::~Calcul()
 {
-    //dtor
+        productivity.clear();
+        gamma.clear();
+        elasticity.clear();
+        threshold.clear();
 }
