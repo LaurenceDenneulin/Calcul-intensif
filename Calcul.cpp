@@ -57,6 +57,26 @@ void Calcul::Set_Threshold()
     return ;
 }
 
+void Calcul::Set_tax()
+{
+    double sum1=0;
+    double sum2=0;
+    for (int i=0; i<Kmax;i++)
+    {
+        if (productivity[i]<=threshold[i])
+        {
+            sum1=sum1+pow(1-tP,elasticity[i])*pow(productivity[i],1+elasticity[i]);
+        }
+        else
+        {
+            sum2=sum2+pow(1-tC,elasticity[i])*pow(productivity[i],1+elasticity[i]);
+        }
+    }
+    tax=tP*sum1+tC*sum2;
+    gdp=sum1+sum2;
+    return;
+}
+
 Calcul::~Calcul()
 {
     //dtor

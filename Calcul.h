@@ -19,9 +19,12 @@ class Calcul
         void Set_Elasticity();
         double Wtilde(double g, double e);
         void Set_Threshold();
+        void Set_tax();
         double r;
     protected:
     private:
+        double tax;
+        double gdp;
         double taxmax;
         double S [2][2];
         double tP=0.75;
