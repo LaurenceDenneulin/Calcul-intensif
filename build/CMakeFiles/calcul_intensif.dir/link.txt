@@ -1,0 +1,1 @@
+/usr/bin/CC    -std=c++11 -fopenmp   CMakeFiles/calcul_intensif.dir/Calcul.cpp.o CMakeFiles/calcul_intensif.dir/main.cpp.o  -o bin/calcul_intensif  -L/usr/local/lib -Wl,-rpath,/usr/local/lib  -lomp 

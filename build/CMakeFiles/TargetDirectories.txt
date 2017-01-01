@@ -1,0 +1,3 @@
+/mnt/monwarez/Calcul intensif/build/CMakeFiles/rebuild_cache.dir
+/mnt/monwarez/Calcul intensif/build/CMakeFiles/edit_cache.dir
+/mnt/monwarez/Calcul intensif/build/CMakeFiles/calcul_intensif.dir

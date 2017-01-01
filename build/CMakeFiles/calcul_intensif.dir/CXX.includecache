@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/monwarez/Calcul intensif/Calcul.cpp
+Calcul.h
+/mnt/monwarez/Calcul intensif/Calcul.h
+stdio.h
+-
+stdlib.h
+-
+cmath
+-
+random
+-
+algorithm
+-
+
+/mnt/monwarez/Calcul intensif/Calcul.h
+iostream
+-
+vector
+-
+
+/mnt/monwarez/Calcul intensif/main.cpp
+Calcul.h
+/mnt/monwarez/Calcul intensif/Calcul.h
+iostream
+-
+stdio.h
+-
+stdlib.h
+-
+omp.h
+-
+
+/usr/local/include/omp.h
+stdlib.h
+-
+
