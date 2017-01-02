@@ -24,7 +24,7 @@ class Calcul
 
         double Wtilde(const double g, const double e);
 
-        const int Kmax = 10;
+        const int Kmax = 1000;
         double tPopt;
         double tCopt;
         double ns;

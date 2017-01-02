@@ -13,8 +13,3 @@ add_executable(
     Calcul.h
     main.cpp
 )
-target_link_libraries(
-    calcul_intensif
-    omp
-)
- 

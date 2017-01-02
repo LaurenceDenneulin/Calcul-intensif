@@ -10,7 +10,7 @@ int main()
     int i = 0;
     #pragma omp parallel private(i)
     {
-        #pragma omp for 
+        #pragma omp for
         for (i=0;i<=20;i++)
         {
             double r=(i-10)/10.f;
@@ -18,8 +18,9 @@ int main()
             c->Set_Productivity_Gamma(r);
             c->Set_Elasticity();
             c->Set_tPopt_tCopt();
-            Sifters=(c->Kmax-c->ns)/c->Kmax*100;
-            std::cout<<"r="<<r<<" Optimum : tP="<<c->tPopt<<"; tC="<<c->tCopt<<"; Sifters="<<Sifters<<"%."<<std::endl;
+            Sifters=((c->Kmax-c->ns)/c->Kmax)*100;
+            #pragma omp critical
+            std::cout<<"On thread "<<omp_get_thread_num()<<" : r="<<r<<" Optimum : tP="<<c->tPopt<<"; tC="<<c->tCopt<<"; Sifters="<<Sifters<<"%."<<std::endl;
             delete c;
         }
     }
